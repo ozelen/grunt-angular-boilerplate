@@ -15,13 +15,21 @@ function CompetitionsService ($http, $q) {
   };
 
   function fetchCompetitions (season) {
-    // TODO: extract url to constants
-    var url = 'http://api.football-data.org/v1/competitions/?season=' + season;
-    var headers = {}
-    return $http.
-      get(url, {headers: HEADERS}).
-      then(function(resp) {return resp.data;}).
-      catch(function(err) {return $q.reject(err.data.error);});
+    var seasons = season.split(',');
+    var requests = [];
+
+    seasons.forEach(function(s) {
+      var url = 'http://api.football-data.org/v1/competitions/?season=' + s;
+      requests.push($http.get(url, {headers: HEADERS}))
+    });
+
+    return $q.all(requests)
+      .then(function(responses) {
+        return _.flatten(_.pluck(responses, 'data'));
+      })
+      .catch(function(err) {
+        return $q.reject(err.data.error);
+      });
   }
 }
 

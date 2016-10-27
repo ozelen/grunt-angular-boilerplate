@@ -42,14 +42,14 @@ describe('CompetitionsService', function() {
   });
 
   // TODO: get competitions by multiple years
-  xit('should get competitions by multiple years', function() {
+  it('should get competitions by multiple years', function() {
     $httpBackend.expectGET('http://api.football-data.org/v1/competitions/?season=1996').
       respond(200, [{id: 123, name: 'Euro 1996'}]);
 
     $httpBackend.expectGET('http://api.football-data.org/v1/competitions/?season=2006').
       respond(200, [{id: 123, name: 'Euro 2006'}]);
 
-    $httpBackend.expectGET('http://api.football-data.org/v1/competitions/?season=1996').
+    $httpBackend.expectGET('http://api.football-data.org/v1/competitions/?season=2016').
       respond(200, [{id: 123, name: 'Euro 2016'}]);
 
     CompetitionsService.fetchCompetitions('1996,2006,2016').
