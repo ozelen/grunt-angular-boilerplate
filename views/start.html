@@ -1,0 +1,28 @@
+<div>
+  <h1>Let's get started!</h1>
+  <div my-customer></div>
+  <p class="lead">Let's start with some data that we want to get from API and render to the screen</p>
+
+  <p>Let's say we get data of football competitions of last year:</p>
+  <p>We're gonna use couple of things for that</p>
+  <h3>UI Component</h3>
+  <p>We use difrectives for that in Angular</p>
+  <code>
+    &lt;champ-list competitions="competitions"&gt;
+  </code>
+
+  <h3>Service</h3>
+  <p>To Fetch the data from third-party API</p>
+  <code>CompetitionsService.fetchCompetitions(year)</code>
+
+  <h3>Result</h3>
+  <p>Then we should have this:</p>
+
+  <champ-list competitions="competitions"></champ-list>
+
+
+  <div class="clearfix">
+    <a href="/#/directives" class="btn btn-primary pull-right">So, how do we test it?</a>
+  </div>
+
+</div>

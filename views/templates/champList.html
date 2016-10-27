@@ -1,0 +1,18 @@
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Caption</th>
+        <th>Number of teams</th>
+        <th>Last updated</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="competition in competitions">
+        <th>{{competition.id}}</th>
+        <td>{{competition.caption}}</td>
+        <td>{{competition.numberOfTeams}}</td>
+        <td>{{competition.lastUpdated}}</td>
+      </tr>
+    </tbody>
+  </table>

@@ -173,6 +173,10 @@ module.exports = function(grunt) {
       unit: {
         configFile: 'karma.conf.js',
         singleRun: true
+      },
+      watch: {
+        configFile: 'karma.conf.js',
+        singleRun: false
       }
     },
 
@@ -216,6 +220,7 @@ module.exports = function(grunt) {
       'concat:filters',
       'less',
       'connect:server',
+      'karma:watch',
       'watch'
     ]);
   });

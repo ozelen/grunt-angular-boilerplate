@@ -38,7 +38,7 @@ module.exports = function(config) {
     reporters: ['progress', 'coverage'],
 
     // web server port
-    port: 8080,
+    port: 8088,
 
     // cli runner port
     runnerPort: 9100,
@@ -57,7 +57,7 @@ module.exports = function(config) {
     // - Safari (only Mac)
     // - PhantomJS
     // - IE (only Windows)
-    browsers: ['PhantomJS'],
+    browsers: ['Chrome'],
 
     // If browser does not capture in given timeout [ms], kill it
     captureTimeout: 5000,
