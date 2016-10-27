@@ -12,7 +12,7 @@
         <th>{{competition.id}}</th>
         <td>{{competition.caption}}</td>
         <td>{{competition.numberOfTeams}}</td>
-        <td>{{competition.lastUpdated}}</td>
+        <td>{{competition.lastUpdated | date : "dd.MM.y"}}</td>
       </tr>
     </tbody>
   </table>
